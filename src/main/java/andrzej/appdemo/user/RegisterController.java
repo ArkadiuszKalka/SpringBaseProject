@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RegisterController {
-	
-	@GET
-	@RequestMapping(value = "/register")
-	public String registerForm(Model model) {
-		User u = new User();
-		model.addAttribute("user", u);
-		return "register";
-	}
+
+    @GET
+    @RequestMapping(value = "/register")
+    public String registerForm(Model model) {
+        User u = new User();
+        model.addAttribute("user", u);
+        return "register";
+    }
 
 }
