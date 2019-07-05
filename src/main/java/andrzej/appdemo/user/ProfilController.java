@@ -3,6 +3,7 @@ package andrzej.appdemo.user;
 import javax.ws.rs.GET;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,21 +15,33 @@ public class ProfilController {
 	
 	@Autowired
 	private UserService userService;
-	
+
+	@Autowired
+    MessageSource messageSource;
+
+
 	@GET
 	@RequestMapping(value = "/profil")
 	public String showUserProfilePage(Model model) {
 		String username = UserUtilities.getLoggedUser();
 		
 		User user = userService.findUserByEmail(username);
-		
 		int nrRoli = user.getRoles().iterator().next().getId();
-		
 		user.setNrRoli(nrRoli);
-		
 		model.addAttribute("user", user);
 		
 		return "profil";
 	}
 
+
+	@GET
+    @RequestMapping(value = "/editpassword")
+    public String editUserPassword(Model model){
+
+	    String username= UserUtilities.getLoggedUser();
+	    User user=userService.findUserByEmail(username);
+	    model.addAttribute("user", user);
+
+	    return "editpassword";
+    }
 }
