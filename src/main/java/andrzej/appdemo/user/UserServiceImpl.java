@@ -36,4 +36,8 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	@Override
+	public void updateUserPassword(String newPassword, String email) {
+		userRepository.updateUserPassword(bCryptPasswordEncoder.encode(newPassword), email);
+	}
 }
