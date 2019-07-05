@@ -51,6 +51,9 @@ public class User {
     @Transient
     private String operacja;
 
+    @Transient
+    private int nrRoli;
+
     public User() {
     }
 
@@ -118,4 +121,11 @@ public class User {
         this.operacja = operacja;
     }
 
+    public int getNrRoli() {
+        return nrRoli;
+    }
+
+    public void setNrRoli(int nrRoli) {
+        this.nrRoli = nrRoli;
+    }
 }
