@@ -22,7 +22,7 @@ public class ProfilController {
     private UserService userService;
 
     @Autowired
-    MessageSource messageSource;
+    private MessageSource messageSource;
 
 
     @GET
