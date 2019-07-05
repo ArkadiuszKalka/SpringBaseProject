@@ -5,7 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-public class UserUtilites {
+public class UserUtilities {
 
     public static String getLoggedUser(){
         String username= null;
