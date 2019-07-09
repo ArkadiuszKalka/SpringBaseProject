@@ -1,11 +1,11 @@
 package andrzej.appdemo.admin;
 
-import java.util.List;
-
 import andrzej.appdemo.user.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface AdminService {
-	
-	public List<User> findAll();
+
+	Page<User> findAll(Pageable pageable);
 
 }
