@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import andrzej.appdemo.user.User;
 
+import java.util.List;
+
 @Service("adminService")
 @Transactional
 public class AdminServiceImpl implements AdminService {
@@ -33,6 +35,9 @@ public class AdminServiceImpl implements AdminService {
 		adminRepository.updateRoleUser(nrRoli, id);
 	}
 
-
-
+	@Override
+	public List<User> findAllSearch(String param) {
+		List<User> userList=adminRepository.findAllSearch(param);
+		return userList;
+	}
 }
