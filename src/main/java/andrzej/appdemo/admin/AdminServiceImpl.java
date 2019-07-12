@@ -1,5 +1,7 @@
 package andrzej.appdemo.admin;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -7,8 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import andrzej.appdemo.user.User;
-
-import java.util.List;
 
 @Service("adminService")
 @Transactional
@@ -37,7 +37,10 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<User> findAllSearch(String param) {
-		List<User> userList=adminRepository.findAllSearch(param);
+		List<User> userList = adminRepository.findAllSearch(param);
 		return userList;
 	}
+
+	
+
 }
