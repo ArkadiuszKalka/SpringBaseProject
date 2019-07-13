@@ -36,8 +36,8 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<User> findAllSearch(String param) {
-		List<User> userList = adminRepository.findAllSearch(param);
+	public Page<User> findAllSearch(String param, Pageable pageable) {
+		Page<User> userList = adminRepository.findAllSearch(param, pageable);
 		return userList;
 	}
 
