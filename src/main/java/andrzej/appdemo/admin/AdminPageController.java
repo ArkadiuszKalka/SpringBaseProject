@@ -42,7 +42,7 @@ public class AdminPageController {
     @RequestMapping(value = "/admin/users/{page}")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminAllUsersPage(@PathVariable("page") int page, Model model) {
-        Page<User> pages = getAllUsersPageable(page - 1,false,null);
+        Page<User> pages = getAllUsersPageable(page - 1, false, null);
         int totalPages = pages.getTotalPages();
         int currentPage = pages.getNumber();
         List<User> userList = pages.getContent();
@@ -96,6 +96,14 @@ public class AdminPageController {
         model.addAttribute("searchWord", searchWord);
         return "admin/usersearch";
     }
+
+    @GET
+    @RequestMapping(value = "/admin/users/importusers")
+    @Secured(value = "ROLE_ADMIN")
+    public String showUploadPageFromXML(Model model) {
+        return "/admin/importusers";
+    }
+
 
     // Pobranie listy userów
     private Page<User> getAllUsersPageable(int page, boolean search, String param) {
