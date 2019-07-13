@@ -23,7 +23,7 @@ import andrzej.appdemo.user.User;
 @Controller
 public class AdminPageController {
 
-    private static int ELEMENTS = 10;
+    private static int ELEMENTS = 4;
 
     @Autowired
     private AdminService adminService;
