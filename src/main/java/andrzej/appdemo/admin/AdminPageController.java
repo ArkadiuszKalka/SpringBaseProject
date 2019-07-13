@@ -1,5 +1,10 @@
 package andrzej.appdemo.admin;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -8,6 +13,7 @@ import java.util.Map;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
+import andrzej.appdemo.utilities.UserUtilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.data.domain.Page;
@@ -16,9 +22,12 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import andrzej.appdemo.user.User;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class AdminPageController {
@@ -102,6 +111,32 @@ public class AdminPageController {
     @Secured(value = "ROLE_ADMIN")
     public String showUploadPageFromXML(Model model) {
         return "/admin/importusers";
+    }
+
+    @POST
+    @RequestMapping(value = "/admin/users/upload")
+    @Secured(value = "ROLE_ADMIN")
+    public String importUsersFromXML(@RequestParam("filename") MultipartFile mFile) {
+
+        String uploadDir = System.getProperty("user.dir") + "/uploads";
+        File file;
+
+        try {
+            file = new File(uploadDir);
+            if (!file.exists()) {
+                file.mkdir();
+            }
+            Path fileAndPath = Paths.get(uploadDir, mFile.getOriginalFilename());
+            Files.write(fileAndPath, mFile.getBytes());
+            file=new File(fileAndPath.toString());
+            List<User> userList= UserUtilities.userDataLoader(file);
+            for (User u: userList){
+                System.out.println(u.getEmail()+" > "+ u.getName());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:/admin/users/1";
     }
 
 
