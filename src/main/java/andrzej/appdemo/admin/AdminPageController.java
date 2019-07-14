@@ -128,11 +128,10 @@ public class AdminPageController {
             }
             Path fileAndPath = Paths.get(uploadDir, mFile.getOriginalFilename());
             Files.write(fileAndPath, mFile.getBytes());
-            file=new File(fileAndPath.toString());
-            List<User> userList= UserUtilities.userDataLoader(file);
-            for (User u: userList){
-                System.out.println(u.getEmail()+" > "+ u.getName());
-            }
+            file = new File(fileAndPath.toString());
+            List<User> userList = UserUtilities.userDataLoader(file);
+            adminService.insertInBatch(userList);
+            file.delete();
         } catch (Exception e) {
             e.printStackTrace();
         }
