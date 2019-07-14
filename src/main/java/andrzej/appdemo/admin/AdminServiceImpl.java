@@ -76,4 +76,14 @@ public class AdminServiceImpl implements AdminService {
         }
 
     }
+
+    @Override
+    public void saveAll(List<User> userList) {
+        for (int i = 0; i < userList.size(); i++) {
+            Role role = roleRepository.findByRole("ROLE_USER");
+            userList.get(i).setRoles(new HashSet<Role>(Arrays.asList(role)));
+            userList.get(i).setPassword(bCryptPasswordEncoder.encode(userList.get(i).getPassword()));
+        }
+        adminRepository.saveAll(userList);
+    }
 }
