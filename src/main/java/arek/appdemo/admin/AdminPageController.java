@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
@@ -157,6 +158,15 @@ public class AdminPageController {
         }
         return pages;
     }
+
+    @DELETE
+    @RequestMapping(value = "/admin/users/delete/{id}")
+    @Secured(value = {"ROLE_ADMIN"})
+    public String deleteUser(@PathVariable("id") int id) {
+        adminService.deleteUserById(id);
+        return "redirect:/admin/users/1";
+    }
+
 
     // przygotowanie mapy ról
     public Map<Integer, String> prepareRoleMap() {
