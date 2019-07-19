@@ -25,4 +25,14 @@ public interface AdminRepository extends JpaRepository<User, Integer> {
 	
 	@Query(value = "SELECT u FROM User u WHERE u.name LIKE %:param% OR u.lastName LIKE %:param% OR u.email LIKE %:param%")
     Page<User> findAllSearch(@Param("param") String param, Pageable pageable);
+
+	@Modifying
+	@Query(value = "DELETE from user_role where user_id=:id", nativeQuery = true)
+	void deleteFromUserRole(@Param("id")int id);
+
+	@Modifying
+	@Query(value = "DELETE from user where user_id=:id", nativeQuery = true)
+	void deleteFromUser(@Param("id")int id);
+
+
 }

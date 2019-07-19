@@ -89,9 +89,9 @@
                             <img src="/resources/images/deliconinact.png" with="16" height="16">
                         </c:when>
                         <c:otherwise>
-                            <a href="delete/${u.id }"></a>
+                            <a href="delete/${u.id }">
                             <img src="/resources/images/delicon.png" width="16" height="16"
-                                 title="<s:message code="delete.user"/>/">
+                                 title="<s:message code="delete.user"/>"/>
                             </a>
                         </c:otherwise>
                     </c:choose>
