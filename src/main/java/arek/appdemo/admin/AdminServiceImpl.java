@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +23,8 @@ import arek.appdemo.user.User;
 @Service("adminService")
 @Transactional
 public class AdminServiceImpl implements AdminService {
+
+	private static final Logger LOG= LoggerFactory.getLogger(AdminServiceImpl.class);
 
 	@Autowired
     private JpaContext jpaContext;
@@ -75,7 +79,8 @@ public class AdminServiceImpl implements AdminService {
             }
 		}
 	}
-	
+
+	@Override
 	public void saveAll(List<User> userList) {
 		for (int i = 0; i < userList.size(); i++) {
             Role role = roleRepository.findByRole("ROLE_USER");
@@ -83,5 +88,12 @@ public class AdminServiceImpl implements AdminService {
 			userList.get(i).setPassword(bCryptPasswordEncoder.encode(userList.get(i).getPassword()));
 		}
 		adminRepository.saveAll(userList);
+	}
+
+	@Override
+	public void deleteUserById(int id) {
+		LOG.debug("**** USUNIETO USERA "+id);
+		adminRepository.deleteFromUserRole(id);
+		adminRepository.deleteFromUser(id);
 	}
 }
