@@ -34,7 +34,7 @@ public class AdminPageController {
 
     private static final Logger LOG = LoggerFactory.getLogger(AdminPageController.class);
 
-    private static int ELEMENTS = 20;
+    private static int ELEMENTS = 10;
 
     @Autowired
     private AdminService adminService;
