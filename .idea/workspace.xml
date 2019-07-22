@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="273783fc-ce8c-4f47-8038-18c21367b9d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/arek/appdemo/utilities/AppdemoUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arek/appdemo/utilities/AppdemoUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,27 +59,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/users.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1638">
-              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/admin/AdminService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/admin/AdminRepository.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -146,11 +125,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/utilities/AppdemoUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+            <state relative-caret-position="306">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/emailSender/EmailSender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/emailSender/EmailSenderImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,9 +171,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Tag Library Descriptor" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -244,6 +244,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/arek/appdemo/user/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/arek/appdemo/utilities/AppdemoUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/arek/appdemo/emailSender/EmailSender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/arek/appdemo/emailSender/EmailSenderImpl.java" />
       </list>
     </option>
   </component>
@@ -342,6 +344,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="appdemo" type="462c0819:PsiDirectoryNode" />
               <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appdemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="appdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="emailSender" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appdemo" type="b2602c69:ProjectViewProjectNode" />
@@ -504,12 +515,12 @@
       <workItem from="1563440906289" duration="3464000" />
       <workItem from="1563540340257" duration="4812000" />
       <workItem from="1563545495618" duration="32000" />
-      <workItem from="1563802745848" duration="1330000" />
+      <workItem from="1563802745848" duration="2144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64322000" />
+    <option name="totallyTimeSpent" value="65136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1032" extended-state="6" />
@@ -531,7 +542,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32990867" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946353" weight="0.32990867" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946353" visible="true" weight="0.32990867" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005365" side_tool="true" weight="0.32990867" />
       <window_info anchor="bottom" id="SonarLint" order="11" />
@@ -540,7 +551,7 @@
       <window_info anchor="bottom" id="Version Control" order="14" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32990867" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.32990867" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" visible="true" weight="0.32990867" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.32990867" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -560,14 +571,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.app" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/andrzej/appdemo/admin/AdminPageControler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -919,8 +922,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/utilities/AppdemoUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        <state relative-caret-position="306">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/emailSender/EmailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/arek/appdemo/emailSender/EmailSenderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
