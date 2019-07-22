@@ -5,6 +5,8 @@ import java.util.Locale;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
+import arek.appdemo.emailSender.EmailSender;
+import arek.appdemo.utilities.AppdemoUtils;
 import arek.appdemo.validators.UserRegisterValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,9 @@ public class RegisterController {
 
     @Autowired
     MessageSource messageSource;
+
+    @Autowired
+    EmailSender emailSender;
 
     @GET
     @RequestMapping(value = "/register")
@@ -51,11 +56,16 @@ public class RegisterController {
         if (result.hasErrors()) {
             returnPage = "register";
         } else {
+            user.setActivationCode(AppdemoUtils.randomStringGenerator());
+
+            String content = "Wymagane potwierdzenie rejestracji. Kliknij w poniższy link aby aktywować konto:\n" +
+                    "http://localhost:8080/activatelink/" + user.getActivationCode();
             userService.saveUser(user);
+            emailSender.sendMail(user.getEmail(), "Potwierdzenie rejestracji", content);
             LOG.info("**** UTWORZONO USERA( " + user.getName());
-            model.addAttribute("message", messageSource.getMessage("user.register.success", null, locale));
-            model.addAttribute("user", new User());
-            returnPage = "register";
+            model.addAttribute("message", messageSource.getMessage("user.register.success.email", null, locale));
+            //model.addAttribute("user", new User());
+            returnPage = "index";
         }
 
         return returnPage;
