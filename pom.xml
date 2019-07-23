@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>arek</groupId>
-	<artifactId>Spring_appdemo</artifactId>
+	<artifactId>SpringBaseProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>appdemo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>SpringBase</name>
+	<description>Spring Boot base project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
